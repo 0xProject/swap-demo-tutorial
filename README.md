@@ -9,7 +9,7 @@ This app [aggregates liquidity across the greater DEX ecosystem using 0x](https:
 * 💦 What is liquidity aggregation?
 * 🪟 Query + Display an ERC20 token list
 * ♻️ Use @0xProject API's /swap endpoint
-* 🧱 Build a Swap Dapp with Metam*sk and Web3.js
+* 🧱 Build a Swap Dapp with Metamask and Web3.js
 
 ## Video and Written Tutorial
 
