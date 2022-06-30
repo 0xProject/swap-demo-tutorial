@@ -1,8 +1,5 @@
-let currentTrade = {};
-let currentSelectSide;
-let tokens;
-
-async function init(){
+// index.js
+async function init() {
   await listAvailableTokens();
 }
 
@@ -11,76 +8,51 @@ async function listAvailableTokens(){
   let response = await fetch('https://tokens.coingecko.com/uniswap/all.json');
   let tokenListJSON = await response.json();
   console.log("listing available tokens: ", tokenListJSON);
-  tokens = tokenListJSON.tokens
-  //console.log("tokens:", tokens);
+  tokens = tokenListJSON.tokens;
+  console.log("tokens: ", tokens);
 
-  // create token list for modal
+  // Create token list for modal
   let parent = document.getElementById("token_list");
   for (const i in tokens){
-    // token row in the modal token list
-    let div = document.createElement("div");
-    div.className = "token_row";
-    let html = `
-    <img class="token_list_img" src="${tokens[i].logoURI}">
-      <span class="token_list_text">${tokens[i].symbol}</span>
-      `;
-    div.innerHTML = html;
-    div.onclick = () => {
-      selectToken(tokens[i]);
-    };
-    parent.appendChild(div);
-  }
+      // Token row in the modal token list
+      let div = document.createElement("div");
+      div.className = "token_row";
+      let html = `
+      <img class="token_list_img" src="${tokens[i].logoURI}">
+        <span class="token_list_text">${tokens[i].symbol}</span>
+        `;
+      div.innerHTML = html;
+      parent.appendChild(div);
+  };
 }
-
-function selectToken(token){
-  closeModal();
-  currentTrade[currentSelectSide] = token;
-  console.log("currentTrade: ", currentTrade);
-}
-
-function renderInterface(){
-  if (currentTrade.from){
-    document.getElementById("from_token_img").src = currentTrade.from.logURI;
-    document.getElementById("from_token_text").innerHTML = currentTrade.from.symbol;
-  }
-  if (currentTrade.to){
-    document.getElementById("to_token_img").src = currentTrade.from.logURI;
-    document.getElementById("to_token_text").innerHTML = currentTrade.from.symbol;
-  }
-
-}
-
 
 async function connect() {
-    if (typeof window.ethereum !== "undefined") {
-        try {
+  if (typeof window.ethereum !== "undefined") {
+      try {
           console.log("connecting");
           await ethereum.request({ method: "eth_requestAccounts" });
-        } catch (error) {
+      } catch (error) {
           console.log(error);
-        }
-        document.getElementById("login_button").innerHTML = "Connected";
-        // const accounts = await ethereum.request({ method: "eth_accounts" });
-        document.getElementById("swap_button").disabled = false;
+      }
+      document.getElementById("login_button").innerHTML = "Connected";
+      // const accounts = await ethereum.request({ method: "eth_accounts" });
+      document.getElementById("swap_button").disabled = false;
       } else {
-        document.getElementById("login_button").innerHTML =
+      document.getElementById("login_button").innerHTML =
           "Please install MetaMask";
       }
-    }
+  }
 
-function openModal(side){
-  currentSelectSide = side;
-  document.getElementById("token_modal").style.display = "block";
-}
+  init();
 
-function closeModal(){
+  function openModal(){
+      document.getElementById("token_modal").style.display = "block";
+  }
+
+  function closeModal(){
   document.getElementById("token_modal").style.display = "none";
-}
+  }
 
-init();
-
-document.getElementById("login_button").onclick = connect;
-document.getElementById("from_token_select").onclick = () => {
-  openModal("from");
-};
-document.getElementById("modal_close").onclick = closeModal;
+  document.getElementById("login_button").onclick = connect;
+  document.getElementById("from_token_select").onclick = openModal;
+  document.getElementById("modal_close").onclick = closeModal;
