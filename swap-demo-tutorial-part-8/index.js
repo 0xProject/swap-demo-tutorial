@@ -93,8 +93,10 @@ async function getPrice(){
         sellAmount: amount,
     }
   
+    const headers = {'0x-api-key: [api-key]'}; // This is a placeholder. Get your live API key from the 0x Dashboard (https://dashboard.0x.org/apps)
+
     // Fetch the swap price.
-    const response = await fetch(`https://api.0x.org/swap/v1/price?${qs.stringify(params)}`);
+    const response = await fetch(`https://api.0x.org/swap/v1/price?${qs.stringify(params)}`, { headers });
     
     swapPriceJSON = await response.json();
     console.log("Price: ", swapPriceJSON);
@@ -116,8 +118,10 @@ async function getQuote(account){
         takerAddress: account,
     }
   
+    const headers = {'0x-api-key: [api-key]'}; // This is a placeholder. Get your live API key from the 0x Dashboard (https://dashboard.0x.org/apps)
+    
     // Fetch the swap quote.
-    const response = await fetch(`https://api.0x.org/swap/v1/quote?${qs.stringify(params)}`);
+    const response = await fetch(`https://api.0x.org/swap/v1/quote?${qs.stringify(params)}`, { headers });
     
     swapQuoteJSON = await response.json();
     console.log("Quote: ", swapQuoteJSON);
