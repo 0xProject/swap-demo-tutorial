@@ -1,6 +1,6 @@
-:::info
-📣 After May 8, 2023, all API requests without an API key will return an error. Legacy code examples may contain requests without API keys. Follow [this guide](https://0x.org/docs/introduction/getting-started) for how to get a live API key and use it for any 0x products.
-:::
+> **Note**
+> 📣 After May 8, 2023, all API requests without an API key will return an error. Legacy code examples may contain requests without API keys. Follow [this guide](https://0x.org/docs/introduction/getting-started) for how to get a live API key and use it for any 0x products.
+
 
 # How to Build a Simple Token Swap DApp using the 0x Swap API
 
