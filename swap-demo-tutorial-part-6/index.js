@@ -93,10 +93,12 @@ async function getPrice(){
     buyToken: currentTrade.to.address,
     sellAmount: amount,
   }
+  
+  const headers = {'0x-api-key: [api-key]'}; // This is a placeholder. Get your live API key from the 0x Dashboard (https://dashboard.0x.org/apps)
 
   // Fetch the swap price.
   const response = await fetch(
-    `https://api.0x.org/swap/v1/price?${qs.stringify(params)}`
+    `https://api.0x.org/swap/v1/price?${qs.stringify(params), { hearders }`
     );
   
   swapPriceJSON = await response.json();
