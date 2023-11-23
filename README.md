@@ -1,5 +1,5 @@
 > **Note**
-> 📣 After May 8, 2023, all API requests without an API key will return an error. Legacy code examples may contain requests without API keys. Follow [this guide](https://0x.org/docs/introduction/getting-started) for how to get a live API key and use it for any 0x products.
+> 📣 All API requests require a 0x API key. Legacy code examples may contain requests without API keys. Follow [this guide](https://0x.org/docs/introduction/getting-started) for how to get a live API key and use it for any 0x products.
 
 
 # How to Build a Simple Token Swap DApp using the 0x Swap API
@@ -19,7 +19,7 @@ This app [aggregates liquidity across the greater DEX ecosystem using 0x](https:
 ## Video and Written Tutorial
 
 * 🎥 Watch Video Walk-Through: https://www.youtube.com/watch?v=tVvZ1ivp4X0
-* 📖 Full Written Tutorial: https://docs.alchemy.com/alchemy/road-to-web3/weekly-learning-challenges/9.-how-to-build-a-token-swap-dapp-with-0x-api
+* 📖 Full Written Tutorial: https://0x.org/docs/0x-swap-api/guides/how-to-build-a-token-swap-dapp-with-0x-api
  * The repo is broken up by parts which correspond to parts in the written tutorial above ☝️ Each part builds upon the previous one. 
  * Part 1. Walk-through Starter Code
  * Part 2. Connect to MetaMask
