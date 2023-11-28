@@ -30,3 +30,15 @@ This app [aggregates liquidity across the greater DEX ecosystem using 0x](https:
  * Part 7. Get Quote
  * Part 8. Set a Token Allowance
  * Part 9. Perform the Swap
+
+## Further Examples
+
+To find more demo apps, check out the official [0x examples repo](https://github.com/0xProject/0x-examples).
+
+Try out - 
+
+- [Swap API Demo App (Next.js)](https://github.com/0xProject/0x-nextjs-demo-app/tree/main)
+- [Tx Relay API Demo App (Next.js App Router)](https://github.com/0xProject/0x-examples/tree/main/tx-relay-next-app)
+
+
+
