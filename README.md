@@ -2,6 +2,10 @@
 > 📣 All API requests require a 0x API key. Legacy code examples may contain requests without API keys. Follow [this guide](https://0x.org/docs/introduction/getting-started) for how to get a live API key and use it for any 0x products.
 
 
+> [!WARNING]  
+> 0x API v1 was sunset on April 11, 2025. Please migrate to v2. For details, see the [migration guide](https://0x.org/docs/upgrading). See the [latest v2 examples](https://github.com/0xProject/0x-examples/tree/main?tab=readme-ov-file#v2-latest).
+
+
 # How to Build a Simple Token Swap DApp using the 0x Swap API
 
 
